@@ -16,19 +16,20 @@ xhr.onload= function() {
    if(this.status === 200) {
         const response = JSON.parse(this.responseText);
         console.log(response);
-        let output = '';
         
-       // if(response.type === 'success') {
+            response.items.forEach(function(bookSearch){ 
 
-       // if(xhr.status === 200) {
-            response.value.forEach(function(bookSearch){ 
-                output += `<li>${bookSearch.response.items}</li>`;
+                console.log("searchResults", $('.searchResults'));
+
+                const output = `<img src=${bookSearch.volumeInfo.imageLinks.thumbnail} alt="bookcover">`; 
+                const output1 = `<p>${bookSearch.volumeInfo.authors}</p>`;
+
+                $('.searchResults').append(output);
             });
-        } else {
-            output += `<li>Something went wrong</li>`;
+        
         }
 
-        $('.books').append(output);
+        
     }
 
 
