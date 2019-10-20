@@ -16,23 +16,34 @@ xhr.onload= function() {
    if(this.status === 200) {
         const response = JSON.parse(this.responseText);
         console.log(response);
-        
+           
+            
             response.items.forEach(function(bookSearch){ 
 
                 console.log("searchResults", $('.searchResults'));
 
-                const output = `<img src=${bookSearch.volumeInfo.imageLinks.thumbnail} alt="bookcover">`; 
-                const output1 = `<p>${bookSearch.volumeInfo.authors}</p>`;
+                const output =
+                 `  <div class="row">
+                    <img src=${bookSearch.volumeInfo.imageLinks.thumbnail} alt="bookcover"> 
+
+                        <div class=" col-sm-4 column">
+                        <p>${bookSearch.volumeInfo.title}</p>
+                        <p>${bookSearch.volumeInfo.description}</p>
+                        <p>${bookSearch.volumeInfo.authors}</p>
+                        <p><input type="button" src="${bookSearch.volumeInfo.title}" value="Preview" class="btn btn-primary"></p>
+                        
+                        </div>
+                    </div>
+                 `;
 
                 $('.searchResults').append(output);
+                
             });
         
         }
 
         
     }
-
-
 xhr.send();
 
 
