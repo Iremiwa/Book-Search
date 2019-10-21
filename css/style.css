@@ -1,28 +1,36 @@
-body {
-    background-color: azure;
-    text-align: center;
-    align-items: center;
+body { 
+  background: url(/images/martin-adams-V75YEqJp4pE-unsplash.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  font-family: cursive;
+  
 }
-
 input {
     width: 300px;
-
+    
 }
 .container {
-    background-color: brown;
+   
     margin: 0 auto;
     max-width: 1000px;
     align-content: center;
-
+   
 }
-
-.row {
-    background-color: bisque;
+#button{
+    margin: 20px;
     
 }
 
-.column {
-    padding: 10px, 0;
-    margin: 10px, 0;
-    width: 100%;
+h1{
+    padding-top: 10px;
+    margin-bottom: 10px;
+    color: purple;
+    font-weight: bold;
+}
+.form-group{
+    padding: 10px;
+    color:coral;
 }
